@@ -1,0 +1,53 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/core": "^1.3.13",
+    "@date-io/date-fns": "^1.3.13",
+    "@date-io/luxon": "^1.3.13",
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.45",
+    "@material-ui/pickers": "^3.2.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "date-fns": "^2.10.0",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "jss": "^9.7.0",
+    "luxon": "^1.22.0",
+    "material-ui-phone-number": "^2.2.5",
+    "react": "^16.12.0",
+    "react-country-region-selector-material-ui-new": "^1.5.2",
+    "react-dom": "^16.12.0",
+    "react-images-upload": "^1.2.8",
+    "react-responsive": "^8.0.3",
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1",
+    "typeface-roboto": "0.0.75",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "aws s3 sync build/ s3://hyeconnect-profile-page --acl public-read",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
