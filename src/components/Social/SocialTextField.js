@@ -1,6 +1,7 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Link from '@material-ui/core/Link';
@@ -8,12 +9,12 @@ import FacebookIcon from '../../static/facebook.svg';
 import InstagramIcon from '../../static/instagram.svg';
 import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
-import CustomTextField  from '../styling/CustomTextField';
+import CustomTextField from '../StyledComponents/CustomTextField';
 
 
 const styles = (theme) => ({
     height: {
-        height:'100%',
+        height: '100%',
         display: 'grid'
     },
     discardButton: {
@@ -28,16 +29,12 @@ const styles = (theme) => ({
     },
     marginBottom: {
         marginBottom: theme.spacing(-3),
-        
+
     },
     buttonLeft: {
         marginLeft: theme.spacing(-2),
         marginTop: theme.spacing(1)
     },
-    fontSize: {
-        fontFamily: 'Roboto',
-        fontSize: '14px',
-    }
 });
 
 
@@ -106,38 +103,40 @@ class SocialTextField extends React.Component {
             content =
                 (<div>
                     <div className={classes.marginLeft}>
-                    <ListItem className={classes.marginBottom}>
-                        <ListItemIcon>
-                            <Icon className={classes.height}>
-                                <img alt="facebook" src={FacebookIcon} />
-                            </Icon>
-                        </ListItemIcon>
-                        <CustomTextField
-                            placeholder="Link"
-                            value={this.state.facebook}
-                            onChange={this.handleFBChange}
-                            id="outlined-full-width"
-                            fullWidth
-                            margin="dense"
-                            variant="outlined"
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <Icon className={classes.height}>
-                                <img alt="instagram" src={InstagramIcon} />
-                            </Icon>
-                        </ListItemIcon>
-                        <CustomTextField
-                            placeholder="Link"
-                            value={this.state.instagram}
-                            onChange={this.handleIGChange}
-                            id="outlined-full-width"
-                            fullWidth
-                            margin="dense"
-                            variant="outlined"
-                        />
-                    </ListItem>
+                        <List>
+                            <ListItem className={classes.marginBottom}>
+                                <ListItemIcon>
+                                    <Icon className={classes.height}>
+                                        <img alt="facebook" src={FacebookIcon} />
+                                    </Icon>
+                                </ListItemIcon>
+                                <CustomTextField
+                                    placeholder="Link"
+                                    value={this.state.facebook}
+                                    onChange={this.handleFBChange}
+                                    id="outlined-full-width"
+                                    fullWidth
+                                    margin="dense"
+                                    variant="outlined"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <Icon className={classes.height}>
+                                        <img alt="instagram" src={InstagramIcon} />
+                                    </Icon>
+                                </ListItemIcon>
+                                <CustomTextField
+                                    placeholder="Link"
+                                    value={this.state.instagram}
+                                    onChange={this.handleIGChange}
+                                    id="outlined-full-width"
+                                    fullWidth
+                                    margin="dense"
+                                    variant="outlined"
+                                />
+                            </ListItem>
+                        </List>
                     </div>
 
                     <Grid

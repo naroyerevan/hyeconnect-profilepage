@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
-import CustomDatePicker from '../styling/CustomDatePicker';
+import CustomDatePicker from '../StyledComponents/CustomDatePicker';
 
 
 function DatePicker(props) {

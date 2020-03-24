@@ -1,6 +1,7 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
@@ -23,6 +24,9 @@ const styles = (theme) => ({
         fontWeight: '500',
         letterSpacing: '1.3px',
         textAlign: 'right',
+    },
+    marginRight: {
+        marginRight: theme.spacing(-2)
     }
 });
 
@@ -66,27 +70,29 @@ class PersonalInfo extends React.Component {
             <div>
 
                 <Box pl={2} pr={2}>
-                    <ListItem>
-                        <ListItemIcon>
-                            <AccountCircleIcon color="primary" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="body1" style={{ fontWeight: '700' }}>
-                                Personal Information
+                    <List>
+                        <ListItem>
+                            <ListItemIcon className={classes.marginRight}>
+                                <AccountCircleIcon color="primary" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="body1" style={{ fontWeight: '700' }}>
+                                    Personal Information
                         </Typography>
-                        </ListItemText>
-                        {editButton}
-                    </ListItem>
-                    <ListItem>
-                        <Grid
-                            container
-                            direction="column"
-                            justify="flex-start"
-                            alignItems="stretch"
-                        >
-                            <PersonalInfoTextField editable={this.state.editable} onEditableChanged={this.onEditableChanged} />
-                        </Grid>
-                    </ListItem>
+                            </ListItemText>
+                            {editButton}
+                        </ListItem>
+                        <ListItem>
+                            <Grid
+                                container
+                                direction="column"
+                                justify="flex-start"
+                                alignItems="stretch"
+                            >
+                                <PersonalInfoTextField editable={this.state.editable} onEditableChanged={this.onEditableChanged} />
+                            </Grid>
+                        </ListItem>
+                    </List>
                 </Box>
                 <Divider />
 

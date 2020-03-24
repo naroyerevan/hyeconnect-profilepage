@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import Select from '@material-ui/core/Select';
+import { KeyboardDatePicker } from "@material-ui/pickers";
 
 
-export default styled(Select)`
+export default styled(KeyboardDatePicker)`
     && {
         background-color: #EBF1FD;
     },
     fieldset {
         border-radius: 6px;
+        border: 0;
     },
     textarea, input {
         font-family: 'Roboto' !important;

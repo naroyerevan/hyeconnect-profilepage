@@ -16,8 +16,11 @@ import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import IconButton from '@material-ui/core/IconButton';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import CustomTab from '../styling/CustomTab';
+import CustomTab from '../StyledComponents/CustomTab';
 import MediaQuery from 'react-responsive';
+import CustomProgressBar from '../StyledComponents/CustomProgressBar';
+
+
 
 
 
@@ -37,10 +40,13 @@ const styles = (theme) => ({
     section: {
         height: '100%',
     },
-    center: {
+    avatarName: {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize: '16px',
+        marginTop: theme.spacing(1)
     },
     height: {
         height: '100%',
@@ -82,9 +88,10 @@ const styles = (theme) => ({
         marginRight: theme.spacing(1)
     },
     tabSelected: {
-        borderLeft: '3px solid #6B87FB',
+        borderLeft: '4px solid #6B87FB',
         backgroundColor: '#EBF1FD',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        opacity: 1,
     },
     tabLabel: {
         textTransform: 'none',
@@ -93,8 +100,8 @@ const styles = (theme) => ({
         alignItems: 'flex-start'
     },
     tabSelectedMobile: {
-        borderBottom: '3px solid #6B87FB',
-        backgroundColor: '#EBF1FD',
+        borderBottom: '2px solid #6B87FB',
+        opacity: 1,
     },
     avatarContainer: {
         width: '200px',
@@ -118,8 +125,19 @@ const styles = (theme) => ({
         bottom: 0,
         right: 0,
     },
-    background: {
-        backgroundColor: '#DADEE8',
+    progressGrid: {
+        paddingRight: theme.spacing(2.5),
+        paddingLeft: theme.spacing(2.5),
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(3),
+    },
+    progressText: {
+        fontSize:  '12px',
+        fontWeight: 'bold',
+    },
+    tabMobile: {
+        borderBottom: '2px solid rgba(114, 116, 122, .3)',
+        paddingLeft: '8px'
     },
 });
 
@@ -159,12 +177,12 @@ class ProfilePage extends React.Component {
         return (
 
 
-            <main className={classes.background}>
+            <main>
                 <Card className={classes.cardCover}>
                     <CardMedia image={this.state.image} className={classes.media} />
                 </Card>
                 <MediaQuery minWidth={801}>
-                    <Container maxWidth="lg" className={classes.overlay}>
+                    <Container maxWidth="false" className={classes.overlay}>
                         <Button variant="outlined" component="label" className={classes.coverButton} color="primary">
                             <CameraAltIcon className={classes.coverIcon} />
                             EDIT COVER PHOTO
@@ -184,7 +202,7 @@ class ProfilePage extends React.Component {
                                     <Paper className={classes.height}>
                                         <Box className={classes.avatarContainer}>
                                             <div className={classes.avatarOuter}>
-                                                <Avatar src={this.state.avatar} className={classes.avatarOuter} style={{ border: '5px solid white' }} />
+                                                <Avatar src={this.state.avatar} className={classes.avatarOuter} style={{ border: '3px solid white' }} />
 
                                                 <div className={classes.avatarInner}>
                                                     <IconButton color="primary" variant="contained" aria-label="upload picture" component="label" style={{ backgroundColor: "white" }}>
@@ -194,19 +212,36 @@ class ProfilePage extends React.Component {
                                                 </div>
                                             </div>
                                         </Box>
-                                        <Typography variant="h6" className={classes.center}>Tupac Shakur</Typography>
+                                        <Typography variant="body1" className={classes.avatarName}>Tupac Shakur</Typography>
+                                        <Grid container
+                                            direction="row"
+                                            justify="space-evenly"
+                                            alignItems="baseline"
+                                            className={classes.progressGrid}
+                                        >
+                                            <Grid item xs={11}>
+                                                <Typography className={classes.progressText} variant="subtitle2" display="inline" gutterBottom>Profile Completion</Typography>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <Typography className={classes.progressText} variant="subtitle2" display="inline" gutterBottom>90%</Typography>
+                                            </Grid>
+                                            <Grid item xs={12}>
+                                                <CustomProgressBar value={90} variant="determinate" />
+                                            </Grid>
+                                        </Grid>
+
                                         <Tabs
                                             variant="fullWidth"
                                             orientation="vertical"
                                             aria-label="Vertical tabs"
                                             className={classes.tabs}
                                         >
-                                            <CustomTab label={<Typography variant="body1" className={classes.tabLabel}>Timeline</Typography>} />
-                                            <CustomTab value={4} label={<Typography variant="body1" className={classes.tabLabel}>About</Typography>} className={classes.tabSelected} />
-                                            <CustomTab label={<Typography variant="body1" className={classes.tabLabel}>Projects</Typography>} />
-                                            <CustomTab label={<Typography variant="body1" className={classes.tabLabel}>Events</Typography>} />
-                                            <CustomTab label={<Typography variant="body1" className={classes.tabLabel}>Topics</Typography>} />
-                                            <CustomTab label={<Typography variant="body1" className={classes.tabLabel}>Comments</Typography>} />
+                                            <CustomTab label={<Typography variant="body2" className={classes.tabLabel}>Timeline</Typography>} />
+                                            <CustomTab value={4} label={<Typography variant="body2" className={classes.tabLabel}>About</Typography>} className={classes.tabSelected} />
+                                            <CustomTab label={<Typography variant="body2" className={classes.tabLabel}>Projects</Typography>} />
+                                            <CustomTab label={<Typography variant="body2" className={classes.tabLabel}>Events</Typography>} />
+                                            <CustomTab label={<Typography variant="body2" className={classes.tabLabel}>Topics</Typography>} />
+                                            <CustomTab label={<Typography variant="body2" className={classes.tabLabel}>Comments</Typography>} />
                                         </Tabs>
                                     </Paper>
                                 </Grid>
@@ -247,7 +282,7 @@ class ProfilePage extends React.Component {
                                     <Paper className={classes.height}>
                                         <Box className={classes.avatarContainer}>
                                             <div className={classes.avatarOuter}>
-                                                <Avatar src={this.state.avatar} className={classes.avatarOuter} style={{ border: '5px solid white' }} />
+                                                <Avatar src={this.state.avatar} className={classes.avatarOuter} style={{ border: '3px solid #FFFFFF' }} />
 
                                                 <div className={classes.avatarInner}>
                                                     <IconButton color="primary" variant="contained" aria-label="upload picture" component="label" style={{ backgroundColor: "white" }}>
@@ -257,19 +292,37 @@ class ProfilePage extends React.Component {
                                                 </div>
                                             </div>
                                         </Box>
-                                        <Typography variant="h6" className={classes.center}>Tupac Shakur</Typography>
+                                        <Typography className={classes.avatarName}>Tupac Shakur</Typography>
+                                        <Grid container
+                                            direction="row"
+                                            justify="space-evenly"
+                                            alignItems="baseline"
+                                            className={classes.progressGrid}
+                                        >
+                                            <Grid item xs={11}>
+                                                <Typography className={classes.progressText} variant="subtitle2" display="inline" gutterBottom>Profile Completion</Typography>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <Typography className={classes.progressText} variant="subtitle2" display="inline" gutterBottom>90%</Typography>
+                                            </Grid>
+                                            <Grid item xs={12}>
+                                                <CustomProgressBar value={90} variant="determinate" />
+                                            </Grid>
+                                        </Grid>
                                         <Tabs
                                             aria-label="Vertical tabs"
                                             variant="scrollable"
                                             scrollButtons="off"
+                                            className={classes.tabMobile}
                                         >
+                                            <Tab label={<Typography variant="body2" className={classes.tabLabel}>Timeline</Typography>} />
                                             <Tab value={4} label={<Typography variant="body1" className={classes.tabLabel}>About</Typography>} className={classes.tabSelectedMobile} />
-                                            <Tab label={<Typography variant="body1" className={classes.tabLabel}>Timeline</Typography>} />
-                                            <Tab label={<Typography variant="body1" className={classes.tabLabel}>Projects</Typography>} />
-                                            <Tab label={<Typography variant="body1" className={classes.tabLabel}>Events</Typography>} />
-                                            <Tab label={<Typography variant="body1" className={classes.tabLabel}>Topics</Typography>} />
-                                            <Tab label={<Typography variant="body1" className={classes.tabLabel}>Comments</Typography>} />
+                                            <Tab label={<Typography variant="body2" className={classes.tabLabel}>Projects</Typography>} />
+                                            <Tab label={<Typography variant="body2" className={classes.tabLabel}>Events</Typography>} />
+                                            <Tab label={<Typography variant="body2" className={classes.tabLabel}>Topics</Typography>} />
+                                            <Tab label={<Typography variant="body2" className={classes.tabLabel}>Comments</Typography>} />
                                         </Tabs>
+                                        {/* </AppBar> */}
                                         <List component="nav" className={classes.root}>
                                             <PersonalInfo />
                                             <About />

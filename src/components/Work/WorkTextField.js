@@ -7,7 +7,7 @@ import DatePicker from './DatePicker';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { withStyles } from '@material-ui/core/styles';
 import MediaQuery from 'react-responsive';
-import CustomTextField  from '../styling/CustomTextField';
+import CustomTextField  from '../StyledComponents/CustomTextField';
 
 
 
@@ -335,7 +335,7 @@ class WorkTextField extends React.Component {
                         <Typography className={classes.marginBottom} variant="body1" display="block" gutterBottom>
                             <b>{this.state.company}</b> • {this.state.selectedFromDate.getFullYear()} - {this.state.selectedToDate.getFullYear()}<br />
                         </Typography>
-                        <Typography className={classes.marginBottom} variant="body1" display="block" gutterBottom>
+                        <Typography className={classes.marginBottom} variant="body2" display="block" gutterBottom>
                             {this.state.position}<br />
                         </Typography>
                         <Typography variant="body2" display="block" align="justify" gutterBottom>

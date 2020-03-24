@@ -1,6 +1,7 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
@@ -23,7 +24,9 @@ const styles = (theme) => ({
         letterSpacing: '1.3px',
         textAlign: 'right',
     },
-
+    marginRight: {
+        marginRight: theme.spacing(-2)
+    }
 });
 
 
@@ -69,27 +72,29 @@ class About extends React.Component {
         return (
             <div>
                 <Box pl={2} pr={2}>
-                    <ListItem >
-                        <ListItemIcon>
-                            <InfoIcon color="primary" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="body1" style={{ fontWeight: '700' }}>
-                                About
+                    <List>
+                        <ListItem >
+                            <ListItemIcon className={classes.marginRight}>
+                                <InfoIcon color="primary" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="body1" style={{ fontWeight: '700' }}>
+                                    About
                         </Typography>
-                        </ListItemText>
-                        {editButton}
-                    </ListItem>
-                    <ListItem>
-                        <Grid
-                            container
-                            direction="column"
-                            justify="flex-start"
-                            alignItems="stretch"
-                        >
-                            <AboutTextField editable={this.state.editable} onEditableChanged={this.onEditableChanged} />
-                        </Grid>
-                    </ListItem>
+                            </ListItemText>
+                            {editButton}
+                        </ListItem>
+                        <ListItem>
+                            <Grid
+                                container
+                                direction="column"
+                                justify="flex-start"
+                                alignItems="stretch"
+                            >
+                                <AboutTextField editable={this.state.editable} onEditableChanged={this.onEditableChanged} />
+                            </Grid>
+                        </ListItem>
+                    </List>
                 </Box>
                 <Divider />
 

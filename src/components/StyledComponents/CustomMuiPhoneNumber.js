@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { KeyboardDatePicker } from "@material-ui/pickers";
+import MuiPhoneNumber from 'material-ui-phone-number';
 
-
-export default styled(KeyboardDatePicker)`
+export default styled(MuiPhoneNumber)`
     && {
         background-color: #EBF1FD;
     },
     fieldset {
         border-radius: 6px;
+        border: 0;
     },
     textarea, input {
         font-family: 'Roboto' !important;

@@ -7,7 +7,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { withStyles } from '@material-ui/core/styles';
-import CustomTextField  from '../styling/CustomTextField';
+import CustomTextField  from '../StyledComponents/CustomTextField';
 
 
 const styles = (theme) => ({

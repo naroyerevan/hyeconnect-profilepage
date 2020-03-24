@@ -7,6 +7,7 @@ export default styled(TextField)`
     },
     fieldset {
         border-radius: 6px;
+        border: 0;
     },
     textarea, input {
         font-family: 'Roboto' !important;

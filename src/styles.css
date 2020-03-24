@@ -3,6 +3,10 @@
     text-align: center;
 }
 
+body {
+  background-color: #DADEE8 !important;
+}
+
 .ContactIconColor {
   color: #000000
 }
