@@ -29,7 +29,6 @@ const styles = (theme) => ({
     },
     marginBottom: {
         marginBottom: theme.spacing(-3),
-
     },
     buttonLeft: {
         marginLeft: theme.spacing(-2),

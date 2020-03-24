@@ -48,7 +48,7 @@ const styles = (theme) => ({
         fontSize: '16px',
         marginTop: theme.spacing(1)
     },
-    height: {
+    paperBack: {
         height: '100%',
         backgroundColor: '#DFE5F3',
         border: '1px solid #CCD6F6',
@@ -79,7 +79,7 @@ const styles = (theme) => ({
         right: '25px',
         backgroundColor: 'rgba(0,0,0,0.52)',
     },
-    coverButtonSM: {
+    coverButtonMobile: {
         position: 'absolute',
         top: '-220px',
         right: '25px',
@@ -200,7 +200,7 @@ class ProfilePage extends React.Component {
                                 spacing={4}>
 
                                 <Grid item xs={4}>
-                                    <Paper className={classes.height}>
+                                    <Paper className={classes.paperBack}>
                                         <Box className={classes.avatarContainer}>
                                             <div className={classes.avatarOuter}>
                                                 <Avatar src={this.state.avatar} className={classes.avatarOuter} style={{ border: '3px solid white' }} />
@@ -248,7 +248,7 @@ class ProfilePage extends React.Component {
                                 </Grid>
 
                                 <Grid item xs={8}>
-                                    <Paper className={classes.height}>
+                                    <Paper className={classes.paperBack}>
                                         <List component="nav" className={classes.root}>
                                             <PersonalInfo />
                                             <About />
@@ -264,7 +264,7 @@ class ProfilePage extends React.Component {
                 </MediaQuery>
                 <MediaQuery maxWidth={800} minWidth={320}>
                     <Box className={classes.overlay}>
-                        <Button variant="outlined" component="label" className={classes.coverButtonSM} color="primary">
+                        <Button variant="outlined" component="label" className={classes.coverButtonMobile} color="primary">
                             <CameraAltIcon className={classes.coverIcon} />
                             EDIT COVER PHOTO
                         <input type="file" onChange={this.onImageChange} className="filetype" id="group_image" style={{ display: 'none' }} />
@@ -280,7 +280,7 @@ class ProfilePage extends React.Component {
                                 spacing={4}>
 
                                 <Grid item xs={12}>
-                                    <Paper className={classes.height}>
+                                    <Paper className={classes.paperBack}>
                                         <Box className={classes.avatarContainer}>
                                             <div className={classes.avatarOuter}>
                                                 <Avatar src={this.state.avatar} className={classes.avatarOuter} style={{ border: '3px solid #FFFFFF' }} />

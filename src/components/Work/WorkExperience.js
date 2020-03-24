@@ -25,6 +25,9 @@ const styles = (theme) => ({
     },
     marginRight: {
         marginRight: theme.spacing(-2)
+    },
+    title: {
+        fontWeight: '700',
     }
 });
 
@@ -77,7 +80,7 @@ class WorkExperience extends React.Component {
                                 <WorkIcon color="primary" />
                             </ListItemIcon>
                             <ListItemText>
-                                <Typography variant="body1" style={{ fontWeight: '700' }}>
+                                <Typography variant="body1" className={classes.title}>
                                     Work Experience
                         </Typography>
                             </ListItemText>

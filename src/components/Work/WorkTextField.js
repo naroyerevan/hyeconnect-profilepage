@@ -7,7 +7,7 @@ import DatePicker from './DatePicker';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { withStyles } from '@material-ui/core/styles';
 import MediaQuery from 'react-responsive';
-import CustomTextField  from '../StyledComponents/CustomTextField';
+import CustomTextField from '../StyledComponents/CustomTextField';
 
 
 
@@ -122,8 +122,8 @@ class WorkTextField extends React.Component {
             content =
                 (
                     <div>
-                        <Typography variant="body1" display="block"  justify="left" gutterBottom>
-                                Add Work Experience
+                        <Typography variant="body1" display="block" justify="left" gutterBottom>
+                            Add Work Experience
                             </Typography>
                         <MediaQuery minWidth={1275}>
                             <Grid
@@ -156,7 +156,7 @@ class WorkTextField extends React.Component {
                                 justify="space-evenly"
                                 alignItems="baseline"
                             >
-                                <Grid item xs className={classes.marginRight}> 
+                                <Grid item xs className={classes.marginRight}>
                                     <CustomTextField
                                         fullWidth
                                         placeholder="Company Name"
@@ -166,7 +166,7 @@ class WorkTextField extends React.Component {
                                         id="outlined-full-width"
                                         variant="outlined"
                                     />
-                                    </Grid>
+                                </Grid>
                                 <Grid item xs className={classes.marginRight}>
                                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                         <DatePicker selectedDate={this.state.selectedFromDate} handleDateChange={this.handleFromDateChange} />

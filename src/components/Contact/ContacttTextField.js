@@ -29,7 +29,7 @@ const styles = (theme) => ({
     },
     gridTop: {
         marginTop: theme.spacing(2),
-        marginBottom: theme.spacing(-3)
+        marginBottom: theme.spacing(-3),
     },
     gridTopMin: {
         marginTop: theme.spacing(2),
@@ -50,7 +50,7 @@ const styles = (theme) => ({
         display: 'block',
         marginRight: theme.spacing(-2)
     },
-    itemMargin: {
+    itemMarginBottom: {
         marginBottom: theme.spacing(-2)
     },
     itemMarginTop: {
@@ -323,7 +323,7 @@ class ContactTextField extends React.Component {
                                         alignItems="center"
                                         spacing={2}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 Who can see?
                                             </Typography>
@@ -447,7 +447,7 @@ class ContactTextField extends React.Component {
                                         alignItems="center"
                                         spacing={2}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 Who can see?
                                     </Typography>
@@ -633,7 +633,7 @@ class ContactTextField extends React.Component {
                                         spacing={2}
                                         className={classes.gridTopMin}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 Country
                                         </Typography>
@@ -671,7 +671,7 @@ class ContactTextField extends React.Component {
                                         alignItems="center"
                                         spacing={2}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 Region
                                         </Typography>
@@ -711,7 +711,7 @@ class ContactTextField extends React.Component {
                                         alignItems="center"
                                         spacing={2}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 City
                                         </Typography>
@@ -744,7 +744,7 @@ class ContactTextField extends React.Component {
                                         alignItems="center"
                                         spacing={2}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 Street Address
                                         </Typography>
@@ -777,7 +777,7 @@ class ContactTextField extends React.Component {
                                         alignItems="center"
                                         spacing={2}
                                     >
-                                        <Grid item xs={12} className={classes.itemMargin}>
+                                        <Grid item xs={12} className={classes.itemMarginBottom}>
                                             <Typography variant="caption" display="block" gutterBottom>
                                                 Who can see?
                                     </Typography>

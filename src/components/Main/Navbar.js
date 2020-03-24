@@ -41,11 +41,7 @@ const styles = (theme) => ({
   marginRight: {
     marginRight: theme.spacing(1),
   },
-  notifIcon: {
-    marginRight: theme.spacing(1),
-    backgroundColor: '#6B87FB',
-  },
-  hyeConnect: {
+  titleText: {
     height: '19px',
     width: '101px',
     color: '#000000',
@@ -70,12 +66,12 @@ const styles = (theme) => ({
     [theme.breakpoints.up('xs')]: {
       width: '14px',
       '&:focus': {
-        width: '20ch',
+        width: '10ch',
         paddingLeft: theme.spacing(4),
       },
     },
   },
-  search: {
+  iconContainer: {
     position: 'relative',
     marginLeft: 0,
     marginRight: theme.spacing(1),
@@ -85,7 +81,7 @@ const styles = (theme) => ({
       width: 'auto',
     },
   },
-  searchIcon: {
+  iconInner: {
     zIndex: 1000,
     padding: theme.spacing(0, 1),
     height: '100%',
@@ -171,7 +167,7 @@ class Navbar extends React.Component {
                 <MediaQuery minWidth={801}>
                   <img src={logo} alt="logo" className={classes.icon} />
                   <Typography className={classes.title} variant="h6" color="textPrimary" noWrap>
-                    <div className={classes.hyeConnect}>
+                    <div className={classes.titleText}>
                       HyeConnect
                   </div>
                   </Typography>
@@ -189,8 +185,8 @@ class Navbar extends React.Component {
                       ),
                     }}
                   />
-                  <div className={classes.search}>
-                    <div className={classes.searchIcon}>
+                  <div className={classes.iconContainer}>
+                    <div className={classes.iconInner}>
                       <NotificationsIcon color="primary" />
                     </div>
                     <Button className={classes.notifButton} />
@@ -200,8 +196,8 @@ class Navbar extends React.Component {
                 <MediaQuery maxWidth={800}>
                   <div className={classes.title}>
                     <img src={logo} alt="logo" className={classes.icon} />
-                    <div className={classes.search}>
-                      <div className={classes.searchIcon}>
+                    <div className={classes.iconContainer}>
+                      <div className={classes.iconInner}>
                         <SearchIcon color="primary" />
                       </div>
                       <InputBase
@@ -213,8 +209,8 @@ class Navbar extends React.Component {
                       />
                     </div>
                   </div>
-                  <div className={classes.search}>
-                    <div className={classes.searchIcon}>
+                  <div className={classes.iconContainer}>
+                    <div className={classes.iconInner}>
                       <AddIcon color="primary" />
                     </div>
                     <Button className={classes.navbarButton} />

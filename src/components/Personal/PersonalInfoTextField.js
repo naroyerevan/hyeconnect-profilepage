@@ -102,7 +102,7 @@ class PersonalInfoTextField extends React.Component {
                             variant="outlined"
                         />
                     </div>
-                    <Typography className={classes.marginBottom} variant="caption" display="block" gutterBottom>
+                    <Typography className={classes.marginBottomEdit} variant="caption" display="block" gutterBottom>
                         Gender
                         </Typography>
                     <FormControl component="fieldset" >
