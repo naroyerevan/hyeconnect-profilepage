@@ -6,14 +6,15 @@ import Box from '@material-ui/core/Box';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import { fade, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import logo from '../../static/logo.png';
-import { IconButton } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import CustomTextField from '../StyledComponents/CustomTextField';
 import MediaQuery from 'react-responsive';
 import InputBase from '@material-ui/core/InputBase';
+import AddIcon from '@material-ui/icons/Add';
 
 
 
@@ -21,14 +22,17 @@ import InputBase from '@material-ui/core/InputBase';
 
 const styles = (theme) => ({
   icon: {
-    maxWidth: '30px',
-    marginRight: theme.spacing(2)
+    maxHeight: '37px',
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.up('xs')]: {
+      marginLeft: theme.spacing(-2)
+    },
   },
   title: {
-    flexGrow: 1,
+    flexGrow: '1',
     display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
+    [theme.breakpoints.up('xs')]: {
+      display: 'inline-flex',
     },
   },
   header: {
@@ -54,41 +58,71 @@ const styles = (theme) => ({
     color: 'inherit',
   },
   inputInput: {
+    borderRadius: '20px',
+    border: '1px solid #DBE1EE',
+    backgroundColor: '#EBF1FD',
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    paddingLeft: theme.spacing(2),
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+    height: '22px',
+    color: 'black',
+    [theme.breakpoints.up('xs')]: {
+      width: '14px',
       '&:focus': {
         width: '20ch',
+        paddingLeft: theme.spacing(4),
       },
     },
   },
   search: {
     position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
     marginLeft: 0,
-    width: '100%',
+    marginRight: theme.spacing(1),
+    width: '40px',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
       width: 'auto',
     },
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
+    zIndex: 1000,
+    padding: theme.spacing(0, 1),
     height: '100%',
+    width: '100%',
     position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  navbarButton: {
+    borderRadius: '20px',
+    border: '1px solid #DBE1EE',
+    backgroundColor: '#EBF1FD',
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: theme.spacing(2),
+    transition: theme.transitions.create('width'),
+    color: 'black',
+    height: '40px',
+    minWidth: '40px',
+  },
+  notifButton: {
+    borderRadius: '20px',
+    border: '1px solid #DBE1EE',
+    backgroundColor: '#EBF1FD',
+    opacity: '0.2',
+    backgroundColor: '#6B87FB',
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: theme.spacing(2),
+    transition: theme.transitions.create('width'),
+    color: 'black',
+    minHeight: '42px',
+    minWidth: '42px',
+  },
+  avatarMargin: {
+    marginRight: theme.spacing(-1),
+  }
 });
 
 class Navbar extends React.Component {
@@ -139,7 +173,6 @@ class Navbar extends React.Component {
                   <Typography className={classes.title} variant="h6" color="textPrimary" noWrap>
                     <div className={classes.hyeConnect}>
                       HyeConnect
-    
                   </div>
                   </Typography>
                   <CustomTextField
@@ -147,7 +180,7 @@ class Navbar extends React.Component {
                     margin="dense"
                     placeholder="Search"
                     className={classes.marginRight}
-                    style={{ backgroundColor: 'white', width: '30%' }}
+                    style={{ backgroundColor: 'white', width: '30%', height: '40px' }}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="start">
@@ -156,25 +189,37 @@ class Navbar extends React.Component {
                       ),
                     }}
                   />
-                  <IconButton color="primary" variant="contained" className={classes.marginRight} >
-                    <NotificationsIcon color="primary" />
-                  </IconButton>
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <NotificationsIcon color="primary" />
+                    </div>
+                    <Button className={classes.notifButton} />
+                  </div>
                   <Avatar alt="Narek Karimyan" src="" />
                 </MediaQuery>
                 <MediaQuery maxWidth={800}>
-                  <img src={logo} alt="logo" className={classes.icon} />
-                  <CustomTextField
-                    fullWidth
-                    variant="outlined"
-                    margin="dense"
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <SearchIcon color="primary" />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
+                  <div className={classes.title}>
+                    <img src={logo} alt="logo" className={classes.icon} />
+                    <div className={classes.search}>
+                      <div className={classes.searchIcon}>
+                        <SearchIcon color="primary" />
+                      </div>
+                      <InputBase
+                        classes={{
+                          root: classes.inputRoot,
+                          input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                      />
+                    </div>
+                  </div>
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <AddIcon color="primary" />
+                    </div>
+                    <Button className={classes.navbarButton} />
+                  </div>
+                  <Avatar alt="Narek Karimyan" src="" className={classes.avatarMargin} />
                 </MediaQuery>
               </Toolbar>
             </Container>
@@ -190,3 +235,12 @@ class Navbar extends React.Component {
 }
 
 export default withStyles(styles, { withTheme: true })(Navbar)
+
+
+
+
+
+
+
+
+

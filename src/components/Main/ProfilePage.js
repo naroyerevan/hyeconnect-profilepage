@@ -62,6 +62,7 @@ const styles = (theme) => ({
     },
     cardCover: {
         position: 'relative',
+        borderRadius: 0,
     },
     overlay: {
         position: 'absolute',
