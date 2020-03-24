@@ -183,7 +183,7 @@ class ProfilePage extends React.Component {
                     <CardMedia image={this.state.image} className={classes.media} />
                 </Card>
                 <MediaQuery minWidth={801}>
-                    <Container maxWidth="false" className={classes.overlay}>
+                    <Container maxWidth="lg" className={classes.overlay}>
                         <Button variant="outlined" component="label" className={classes.coverButton} color="primary">
                             <CameraAltIcon className={classes.coverIcon} />
                             EDIT COVER PHOTO
